@@ -10,7 +10,7 @@ const Landing = () => {
         <h1 className="header__title">Discover Your Next Favorite Anime</h1>
         <p className="header__para">Find personalized anime recommendations</p>
         <div className="input__wrapper">
-            <form action="find-anime" method='get'>
+            <form action="find-anime/" method='get'>
                 <input 
                 type="text" 
                 name='search'
