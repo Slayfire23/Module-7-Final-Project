@@ -1,10 +1,11 @@
 #nav {
-    height: 80px;
+    min-height: 80px;
     display: flex;
 }
 
 ul {
     display: flex;
+    flex-wrap: wrap;
 }
 
 li {
@@ -18,10 +19,11 @@ a {
 .nav__container {
     width: 100%;
     max-width: 1200px;
-    padding: 0 24px;
+    padding: 12px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
     margin: auto;
 }
 
@@ -41,4 +43,28 @@ a {
 
 .logo {
     width: 125px;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+    .nav__container {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav__links {
+        gap: 8px 14px;
+        width: 100%;
+    }
+
+    .nav__link {
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 0;
+        padding: 6px 0;
+    }
+
+    .logo {
+        width: 96px;
+    }
 }

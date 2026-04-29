@@ -21,6 +21,8 @@ body {
   background: black;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 * {
@@ -32,4 +34,10 @@ body {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }

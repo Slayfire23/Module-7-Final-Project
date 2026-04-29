@@ -1,7 +1,7 @@
 #anime-detail-page {
     color: white;
-    min-height: 100vh;
-    padding: 64px 24px;
+    min-height: calc(100vh - 80px);
+    padding: clamp(40px, 7vw, 64px) 24px;
 }
 
 .anime-detail__container {
@@ -77,9 +77,28 @@
 
     .anime-detail__poster {
         max-width: 320px;
+        width: 100%;
     }
 
     .anime-detail__title {
         font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    #anime-detail-page {
+        padding: 32px 20px;
+    }
+
+    .anime-detail__container {
+        gap: 24px;
+    }
+
+    .anime-detail__title {
+        font-size: 30px;
+    }
+
+    .anime-detail__meta {
+        grid-template-columns: 1fr;
     }
 }

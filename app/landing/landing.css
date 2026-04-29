@@ -22,6 +22,10 @@ button {
     margin: auto;
 }
 
+#landing-page header {
+    width: 100%;
+}
+
 .header__content {
     display: flex;
     flex-direction: column;
@@ -29,7 +33,7 @@ button {
 }
 
 .header__title {
-    font-size: 76px;
+    font-size: clamp(42px, 8vw, 76px);
     margin-bottom: 12px;
     line-height: 1;
     color: darkred;
@@ -37,10 +41,11 @@ button {
 }
 
 .header__para {
-    font-size: 24px;
-    line-height: 2;
+    font-size: clamp(18px, 3vw, 24px);
+    line-height: 1.6;
     max-width: 700px;
     color: white;
+    text-align: center;
 }
 
 .header__img-wrapper {
@@ -57,11 +62,14 @@ form,
     margin: 32px auto;
     display: flex;
     justify-content: center;
+    gap: 12px;
 }
 
 .header__img {
-    width: 1200px;
-    height: 400px;
+    width: 100%;
+    max-width: 1200px;
+    height: clamp(220px, 38vw, 400px);
+    object-fit: cover;
 }
 
 input, textarea {
@@ -80,4 +88,25 @@ input, textarea {
 i {
     color: darkred;
     font-size: 24px;
+}
+
+@media (max-width: 640px) {
+    #landing-page {
+        min-height: auto;
+        padding: 48px 20px;
+    }
+
+    form,
+    .input__wrapper {
+        align-items: stretch;
+        margin: 24px auto;
+    }
+
+    .btn {
+        min-width: 44px;
+    }
+
+    .header__img {
+        height: 220px;
+    }
 }

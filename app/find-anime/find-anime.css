@@ -1,28 +1,27 @@
 #find-anime-page {
     min-height: 100vh;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%;
 }
 
 #find-anime-page .header__container {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     position: relative;
     overflow: hidden;
-    padding: 180px 0 120px;
+    padding: clamp(96px, 14vw, 180px) 0 120px;
 }
 
 #find-anime-page .header__background--img {
     position: absolute;
     inset: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     margin: 0;
     z-index: 0;
 }
 
 #find-anime-page .header__img {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 12%;
@@ -44,13 +43,13 @@
 }
 
 #find-anime-page .header__title {
-    font-size: 60px;
+    font-size: clamp(36px, 7vw, 60px);
     margin-bottom: 12px;
     line-height: 1;
     color: white;
     text-align: center;
-    display: flex;
-    width: 800px;
+    max-width: 800px;
+    width: min(100% - 40px, 800px);
 }
 
 #find-anime-page .input__wrapper {
@@ -59,7 +58,9 @@
     margin: 32px auto;
     display: flex;
     justify-content: center;
+    gap: 12px;
     color: black;
+    padding: 0 20px;
 }
 
 #find-anime-page .anime-list{
@@ -158,8 +159,8 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
     height: 40px;
-    margin-left: 12px;
     padding: 0 10px;
+    max-width: 220px;
 }
 
 #find-anime-page .sort-select option {
@@ -177,4 +178,50 @@
     padding: 12px 20px;
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 640px) {
+    #find-anime-page .header__container {
+        padding-bottom: 80px;
+    }
+
+    #find-anime-page .header__title {
+        font-size: 34px;
+        max-width: 360px;
+    }
+
+    #find-anime-page .input__wrapper {
+        align-items: stretch;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 44px;
+        margin: 24px auto;
+        max-width: 420px;
+    }
+
+    #find-anime-page .header__input {
+        grid-column: 1;
+        min-width: 0;
+    }
+
+    #find-anime-page .sort-select {
+        grid-column: 1 / -1;
+        max-width: none;
+        min-width: 0;
+    }
+
+    #find-anime-page .btn {
+        min-width: 44px;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #find-anime-page .anime-list {
+        grid-template-columns: 1fr;
+        margin: 48px auto;
+        padding: 0 20px;
+    }
+
+    #find-anime-page .anime-img {
+        height: 240px;
+    }
 }
