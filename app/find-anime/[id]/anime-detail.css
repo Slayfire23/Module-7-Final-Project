@@ -1,0 +1,85 @@
+#anime-detail-page {
+    color: white;
+    min-height: 100vh;
+    padding: 64px 24px;
+}
+
+.anime-detail__container {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 320px 1fr;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.anime-detail__poster {
+    width: 100%;
+}
+
+.anime-detail__img {
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+}
+
+.anime-detail__content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.anime-detail__title {
+    color: darkred;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.anime-detail__meta {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.anime-detail__meta-item {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.anime-detail__label {
+    color: #bdbdbd;
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.anime-detail__description {
+    color: #dddddd;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.anime-detail__link {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.anime-detail__message {
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .anime-detail__container {
+        grid-template-columns: 1fr;
+    }
+
+    .anime-detail__poster {
+        max-width: 320px;
+    }
+
+    .anime-detail__title {
+        font-size: 36px;
+    }
+}

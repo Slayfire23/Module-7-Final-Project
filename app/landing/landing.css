@@ -1,0 +1,83 @@
+.btn {
+    background-color: black;
+}
+
+.click {
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+button {
+    cursor: pointer;
+}
+
+#landing-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 30px;
+    margin: auto;
+}
+
+.header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__title {
+    font-size: 76px;
+    margin-bottom: 12px;
+    line-height: 1;
+    color: darkred;
+    text-align: center;
+}
+
+.header__para {
+    font-size: 24px;
+    line-height: 2;
+    max-width: 700px;
+    color: white;
+}
+
+.header__img-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+form,
+.input__wrapper {
+    width: 100%;
+    max-width: 750px;
+    margin: 32px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.header__img {
+    width: 1200px;
+    height: 400px;
+}
+
+input, textarea {
+    width: 100%;
+    background-color: black;
+    color: darkred;
+    outline: none;
+    border: 3px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 40px;
+    transition: all 300ms ease;
+}
+
+i {
+    color: darkred;
+    font-size: 24px;
+}

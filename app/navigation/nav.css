@@ -1,0 +1,44 @@
+#nav {
+    height: 80px;
+    display: flex;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav__container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.nav__link {
+    margin-left: 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+    color: white;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.logo {
+    width: 125px;
+}
