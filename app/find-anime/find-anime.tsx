@@ -167,7 +167,7 @@ const FindAnimePage = () => {
 
           {!isLoading &&
             visibleResults.map((anime) => (
-              <Link className="anime-card" href={`/find-anime/${anime.mal_id}`} key={anime.mal_id}>
+              <Link className="anime-card" href={`/find-anime/detail?id=${anime.mal_id}`} key={anime.mal_id}>
                 <div className="anime-image">
                   <img
                     src={anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url || ''}

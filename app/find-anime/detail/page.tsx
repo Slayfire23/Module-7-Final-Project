@@ -1,13 +1,10 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Nav from '../../navigation/nav'
 import Footer from '../../footer/footer'
-import './anime-detail.css'
-
-type PageProps = {
-  params: Promise<{
-    id: string
-  }>
-}
+import '../[id]/anime-detail.css'
 
 type AnimeDetail = {
   title?: string
@@ -40,16 +37,43 @@ type JikanDetailResponse = {
   data?: AnimeDetail
 }
 
-export default async function AnimeDetailPage({ params }: PageProps) {
-  const { id } = await params
-  const anime = await getAnime(id)
+export default function AnimeDetailPage() {
+  const [anime, setAnime] = useState<AnimeDetail | null>(null)
+  const [message, setMessage] = useState('Loading anime details...')
+
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get('id')
+
+    if (!id) {
+      setMessage('Anime details could not be loaded.')
+      return
+    }
+
+    async function loadAnime() {
+      try {
+        const res = await fetch(`https://api.jikan.moe/v4/anime/${id}`)
+
+        if (!res.ok) {
+          throw new Error('Anime details could not be loaded.')
+        }
+
+        const data = (await res.json()) as JikanDetailResponse
+        setAnime(data.data || null)
+        setMessage(data.data ? '' : 'Anime details could not be loaded.')
+      } catch {
+        setMessage('Anime details could not be loaded.')
+      }
+    }
+
+    loadAnime()
+  }, [])
 
   return (
     <>
       <Nav />
       <main id="anime-detail-page">
         {!anime ? (
-          <p className="anime-detail__message">Anime details could not be loaded.</p>
+          <p className="anime-detail__message">{message}</p>
         ) : (
           <section className="anime-detail__container">
             <figure className="anime-detail__poster">
@@ -101,22 +125,4 @@ function DetailItem({ label, value }: { label: string; value: string | number })
       <span>{value}</span>
     </div>
   )
-}
-
-async function getAnime(id: string) {
-  try {
-    const res = await fetch(`https://api.jikan.moe/v4/anime/${id}`, {
-      next: { revalidate: 3600 },
-    })
-
-    if (!res.ok) {
-      return null
-    }
-
-    const data = (await res.json()) as JikanDetailResponse
-
-    return data.data || null
-  } catch {
-    return null
-  }
 }
