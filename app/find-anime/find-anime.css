@@ -17,6 +17,7 @@
     width: 100%;
     height: 100%;
     margin: 0;
+    overflow: hidden;
     z-index: 0;
 }
 
@@ -24,9 +25,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     opacity: 12%;
     display: block;
-    margin-top: 24px;
 }
 
 #find-anime-page .header__content {
